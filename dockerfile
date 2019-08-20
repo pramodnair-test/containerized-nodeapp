@@ -26,7 +26,7 @@ COPY package.json /app/
 RUN npm install
 
 COPY src /app/src
-
+RUN forever start node index.js
 EXPOSE 3005
 
 CMD [ "npm", "start" ]
