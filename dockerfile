@@ -29,5 +29,5 @@ COPY src /app/src
 #RUN forever start node index.js
 EXPOSE 3005
 
-CMD [ "nohup", "node", "index.js > output.log &" ]
+CMD [ "nohup node index.js > output.log &" ]
 
