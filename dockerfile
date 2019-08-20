@@ -24,10 +24,10 @@ WORKDIR /app
 
 COPY package.json /app/
 RUN npm install
-
+#RUN npm install forever -g
 COPY src /app/src
-RUN forever start node index.js
+#RUN forever start node index.js
 EXPOSE 3005
 
-CMD [ "npm", "start" ]
+CMD [ "nohup", "node", "index.js > output.log &" ]
 
