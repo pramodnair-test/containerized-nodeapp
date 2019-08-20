@@ -16,3 +16,15 @@ apt-get -y install docker-ce
 RUN apt-get install -y docker-ce
 RUN usermod -a -G docker jenkins
 USER jenkins
+RUN mkdir /app
+WORKDIR /app
+
+COPY package.json /app/
+RUN npm install --only=production
+
+COPY src /app/src
+
+EXPOSE 3005
+
+CMD [ "npm", "start" ]
+
