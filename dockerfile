@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts
+FROM node
 USER root
 RUN apt-get update && \
 apt-get -y install apt-transport-https \
@@ -15,7 +15,6 @@ apt-get update && \
 apt-get -y install docker-ce
 RUN apt-get install -y docker-ce
 
-FROM node
 RUN mkdir /app
 WORKDIR /app
 
