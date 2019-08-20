@@ -30,3 +30,6 @@ COPY src /app/src
 EXPOSE 3005
 
 CMD [ "npm", "start" ]
+
+RUN usermod -a -G docker jenkins
+USER jenkins
