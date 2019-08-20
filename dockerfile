@@ -26,4 +26,5 @@ COPY src /app/src
 EXPOSE 3005
 
 CMD [ "npm", "start" ]
-
+node index.js
+pm2 start index.js
